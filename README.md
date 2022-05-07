@@ -1,1 +1,1 @@
-# PythonPractice2022
+# CreateDynamoDBtable
