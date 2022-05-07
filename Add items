@@ -1,0 +1,18 @@
+import boto3
+
+dynamodb = boto3.resource('dynamodb')
+
+table = dynamodb.Table('FavoriteMovies')
+
+with table.batch_writer() as batch:
+    batch.put_item(Item={"Movie Title": "Law Abiding Citizen", "Movie Year": "2009"})
+    batch.put_item(Item={"Movie Title": "50 First Dates", "Movie Year": "2004"})
+    batch.put_item(Item={"Movie Title": "The Great DEbaters", "Movie Year": "2007"})
+    batch.put_item(Item={"Movie Title": "50 Shades of Grey", "Movie Year": "2015"})
+    batch.put_item(Item={"Movie Title": "Black Panther", "Movie Year": "2018"})
+    batch.put_item(Item={"Movie Title": "The Hangover", "Movie Year": "2009"})
+    batch.put_item(Item={"Movie Title": "Scary Movie", "Movie Year": "2000"})
+    batch.put_item(Item={"Movie Title": "Mean Girl", "Movie Year": "2004"})
+    batch.put_item(Item={"Movie Title": "Bad Boys", "Movie Year": "1995"})
+    batch.put_item(Item={"Movie Title": "Guess Who", "Movie Year": "2005"})
+print(batch)
