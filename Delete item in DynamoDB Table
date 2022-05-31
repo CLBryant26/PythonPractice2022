@@ -1,0 +1,12 @@
+import boto3
+
+dynamodb = boto3.resource('dynamodb')
+
+table = dynamodb.Table('FavoriteMovies')
+
+response = table.delete_item(Key = {'Movie Title': 'Scary Movie', 'Movie Year': '2000'})
+
+print(response)
+
+
+
