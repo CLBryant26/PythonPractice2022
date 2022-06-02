@@ -21,7 +21,7 @@ table = dynamodb.create_table (
                },
                {
                    'AttributeName':'Movie Year',
-                   'AttributeType': 'N'
+                   'AttributeType': 'S'
                }
             ],
             ProvisionedThroughput={
